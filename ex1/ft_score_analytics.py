@@ -4,9 +4,10 @@ import sys
 
 def ft_score_analytics() -> None:
 
+    print("=== Player Score Analytics ===")
     if len(sys.argv) < 2:
         print("No scores provided. "
-              "Usage: python3 ft_score_analytics.py <score1> <score2>")
+              "Usage: python3 ft_score_analytics.py <score1> <score2> ...")
         return
 
     arguments = sys.argv[1:]
@@ -16,17 +17,23 @@ def ft_score_analytics() -> None:
         try:
             score = int(arg)
             valid_scores.append(score)
-        except ValueError as e:
-            print(f"Invalid parameter: {e}")
+        except ValueError:
+            print(f"Invalid parameter: '{arg}'")
             continue
 
-    total_players = len(arguments)
+    if len(valid_scores) == 0:
+        print("No scores provided. "
+              "Usage: python3 ft_score_analytics.py <score1> <score2> ...")
+        return
+
+    total_players = len(valid_scores)
     total_score = sum(valid_scores)
     average_score = sum(valid_scores) / total_players
     highest_score = max(valid_scores)
     lowest_score = min(valid_scores)
     score_range = max(valid_scores) - min(valid_scores)
 
+    print(f"Scores processed: {valid_scores}")
     print(f"Total Players: {total_players}")
     print(f"Total Score: {total_score}")
     print(f"Average Score: {average_score}")
