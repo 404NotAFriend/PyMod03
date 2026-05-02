@@ -4,7 +4,7 @@ import math
 
 def get_player_pos():
     while True:
-        cords_input = input("Enter new coordinates"
+        cords_input = input("Enter new coordinates "
                             "as floats in format 'x,y,z':")
         cord_parts = cords_input.split(',')
 
@@ -23,7 +23,7 @@ def get_player_pos():
                 try:
                     float(clean_p)
                 except ValueError as e:
-                    print(f"Error on paramter '{clean_p}': {e}")
+                    print(f"Error on parameter '{clean_p}': {e}")
                     break
 
 
