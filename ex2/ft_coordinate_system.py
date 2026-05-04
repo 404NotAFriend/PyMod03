@@ -5,7 +5,7 @@ import math
 def get_player_pos():
     while True:
         cords_input = input("Enter new coordinates "
-                            "as floats in format 'x,y,z':")
+                            "as floats in format 'x,y,z': ")
         cord_parts = cords_input.split(',')
 
         if len(cord_parts) != 3:
