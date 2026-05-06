@@ -19,6 +19,14 @@ def main() -> None:
         name: random.randint(0, 1000) for name in all_cap
     }
     print(f"Score dict: {score}")
+    average_score: float = round(sum(score.values()) / len(score), 2)
+    print(f"Score average is {average_score}")
+    high_scores: dict[str, int] = {
+        name: points
+        for name, points in score.items()
+        if points > average_score
+    }
+    print(f"High scores: {high_scores}")
 
 
 if __name__ == "__main__":
